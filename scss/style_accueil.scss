@@ -57,6 +57,9 @@ header {
   padding-bottom: 40px;
   .btn {
     @include button;
+    &:hover {
+      @include hover-button;
+    }
   }
   h1 {
     width: 61%;
@@ -91,9 +94,16 @@ nav {
       margin-left: 8%;
       margin-right: 5%;
       border: 2px solid transparent;
-      box-shadow: 2px 3px 5px 4px #efefef;
+      box-shadow: 0px 0px 6px 4px #efefef;
       border-radius: 35px;
       position: relative;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0px 0px 8px 8px #efefef;
+        .fas {
+          color: $color-primary;
+        }
+      }
     }
     span {
       display: inline-flex;
@@ -112,9 +122,6 @@ nav {
       margin-right: 20px;
       font-size: 1vh;
     }
-    .fa-store {
-      color: $color-primary;
-    }
   }
 }
 /*Partie centrale*/
@@ -124,6 +131,10 @@ nav {
   flex-direction: column;
   align-items: center;
   background-color: $background-color;
+
+  h2 {
+    margin-top: 50px;
+  }
 }
 
 .title--section {
@@ -136,8 +147,9 @@ nav {
   margin-bottom: 35px;
   border-radius: 20px;
   position: relative;
-  box-shadow: 1px 1px 2px 2px #ececec;
-
+  box-shadow: 0px 0px 10px 2px #ececec;
+  text-decoration: none;
+  color: inherit;
   figure {
     margin: 0;
     height: 100%;
