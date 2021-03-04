@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   display: flex;
   flex-direction: column;
@@ -6,15 +15,53 @@ header {
 
 .logo {
   width: 100%;
-  text-align: center;
+  height: 63px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  box-shadow: 0px 1px 3px 2px #cecece;
+}
+@media screen and (min-width: 980Px) {
+  .logo {
+    height: 100px;
+  }
+}
+.logo img {
+  height: 1.5em;
+}
+@media screen and (min-width: 980Px) {
+  .logo img {
+    height: 1.8em;
+  }
 }
 
 .localisation {
   width: 100%;
+  height: 50px;
   text-align: center;
   background-color: #eaeaea;
-  border-top-color: #cecece;
-  border-top: solid 2px;
+  z-index: 0;
+}
+@media screen and (min-width: 980Px) {
+  .localisation {
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.localisation h3 {
+  margin-top: 15px;
+  font-size: 1em;
+}
+@media screen and (min-width: 980Px) {
+  .localisation h3 {
+    font-size: 1.3em;
+  }
+}
+.localisation h3 i {
+  margin-right: 16px;
 }
 
 .presentation {
@@ -22,6 +69,326 @@ header {
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: 237px;
+  text-align: center;
+  background-color: #f6f6f6;
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+.presentation .btn {
+  width: 60%;
+  color: white;
+  height: 50px;
+  border-radius: 25px;
+  background-image: linear-gradient(to top left, #9356dc, #ff79da);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  box-shadow: 2px 2px 4px 2px #cfcfcf;
+}
+.presentation .btn:hover {
+  background-image: linear-gradient(to top left, #a978e3, #ff8de0);
+  box-shadow: 2px 2px 10px 10px #cfcfcf;
+}
+@media screen and (min-width: 630px) {
+  .presentation .btn {
+    max-width: 300px;
+  }
+}
+@media screen and (min-width: 980Px) {
+  .presentation .btn {
+    max-width: 350px;
+  }
+}
+.presentation h1 {
+  width: 61%;
+  font-size: 1.3em;
+}
+@media all and (min-width: 630px) {
+  .presentation h1 {
+    font-size: 1.5em;
+  }
+}
+@media screen and (min-width: 980Px) {
+  .presentation h1 {
+    font-size: 2em;
+  }
+}
+.presentation h3 {
+  margin-top: 0;
+  width: 81%;
+  font-weight: 100;
+  font-size: 1em;
+  margin-bottom: 30px;
+}
+@media all and (min-width: 630px) {
+  .presentation h3 {
+    font-size: 1.2em;
+  }
+}
+@media screen and (min-width: 980Px) {
+  .presentation h3 {
+    font-size: 1.3em;
+  }
+}
+
+nav {
+  width: 100%;
+  height: 440px;
+}
+nav h2 {
+  margin-top: 50px;
+  margin-bottom: 30px;
+  margin-left: 5%;
+}
+@media all and (min-width: 730px) {
+  nav h2 {
+    margin-left: 2.5%;
+    text-align: center;
+  }
+}
+@media screen and (min-width: 980px) {
+  nav h2 {
+    margin-bottom: 50px;
+    font-size: 2em;
+  }
+}
+nav ul {
+  padding: 0;
+}
+@media screen and (min-width: 980px) {
+  nav ul {
+    display: flex;
+  }
+}
+nav ul li {
+  list-style-type: none;
+  padding-left: 0;
+  height: 75px;
+  display: flex;
+  align-items: center;
+  background-color: #f6f6f6;
+  margin-bottom: 22px;
+  margin-left: 8%;
+  margin-right: 5%;
+  border: 2px solid transparent;
+  box-shadow: 0px 0px 6px 4px #efefef;
+  border-radius: 35px;
+  position: relative;
+  cursor: pointer;
+}
+nav ul li:hover {
+  box-shadow: 0px 0px 8px 8px #efefef;
+  background-color: #f9f9f9;
+}
+nav ul li:hover .fas {
+  color: #9356dc;
+}
+@media all and (min-width: 630px) {
+  nav ul li {
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 980px) {
+  nav ul li {
+    margin: 0 auto;
+    height: 250px;
+    width: 300px;
+    font-size: 1.5em;
+  }
+}
+nav ul .nav__li--number {
+  display: inline-flex;
+  width: 25px;
+  height: 25px;
+  background-color: #9356dc;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  left: -0.92em;
+  justify-content: center;
+  align-items: center;
+}
+@media all and (min-width: 630px) {
+  nav ul .nav__li--number {
+    left: 50%;
+    top: -0.92em;
+  }
+}
+@media screen and (min-width: 980px) {
+  nav ul .nav__li--number {
+    height: 1.3em;
+    width: 2em;
+    left: 130px;
+    top: -0.8em;
+  }
+}
+@media screen and (min-width: 980px) {
+  nav ul .nav__li--text {
+    position: absolute;
+    bottom: 50px;
+  }
+}
+nav ul i {
+  margin-left: 30px;
+  margin-right: 20px;
+  font-size: 1em;
+}
+@media screen and (min-width: 980px) {
+  nav ul i {
+    font-size: 1.7em;
+    position: absolute;
+    top: 70px;
+    height: 1.6em;
+  }
+}
+
+/*Partie centrale*/
+#restaurants {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f6f6f6;
+}
+@media all and (min-width: 730px) {
+  #restaurants {
+    flex-flow: row wrap;
+    justify-content: space-around;
+  }
+}
+#restaurants .title--section {
+  width: 90%;
+  margin-top: 50px;
+}
+@media all and (min-width: 730px) {
+  #restaurants .title--section {
+    width: 95%;
+    text-align: center;
+  }
+}
+@media all and (min-width: 980px) {
+  #restaurants .title--section {
+    font-size: 2em;
+  }
+}
+
+.card--restaurant {
+  height: 250px;
+  width: 90%;
+  display: block;
+  margin-bottom: 35px;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 0px 0px 10px 2px #ececec;
+  text-decoration: none;
+  color: inherit;
+}
+@media all and (min-width: 730px) {
+  .card--restaurant {
+    width: 45%;
+    height: 300px;
+  }
+}
+.card--restaurant figure {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.card--restaurant figure img {
+  height: 70%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 20px 20px 0 0;
+}
+.card--restaurant figure figcaption {
+  height: 30%;
+  background-color: white;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.card--restaurant figure figcaption .caption {
+  margin-left: 12px;
+  position: relative;
+}
+.card--restaurant figure figcaption h3 {
+  margin: 0;
+}
+.card--restaurant figure figcaption p {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.card--restaurant figure figcaption i {
+  margin-right: 25px;
+  font-size: 1.8em;
+}
+.card--restaurant figure .full-heart {
+  position: absolute;
+  right: 0;
+  transform: scale(1);
+  color: #9356dc;
+  display: none;
+}
+.card--restaurant figure .full-heart :hover::after {
+  display: initial;
+  cursor: help;
+}
+.card--restaurant__new {
+  width: 80px;
+  height: 30px;
+  position: absolute;
+  top: 13px;
+  right: 13px;
+  background-color: #99e2d0;
+  color: #217460;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Footer*/
+footer {
+  display: flex;
+  flex-direction: column;
+  height: 195px;
+  background-color: #353535;
+  color: white;
+  padding: 20px;
+}
+@media all and (min-width: 730px) {
+  footer {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    height: 120px;
+  }
+}
+footer h3 {
+  font-family: "shrikhand";
+  font-weight: 400;
+}
+@media all and (min-width: 730px) {
+  footer h3 {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 0;
+    text-align: center;
+    font-size: 1.5em;
+  }
+}
+footer a {
+  margin-top: 10px;
+}
+footer a .fa-utensils {
+  margin-right: 15px;
+}
+footer a .fa-hands-helping {
+  margin-right: 4px;
 }
 
 /*# sourceMappingURL=style_accueil.css.map */

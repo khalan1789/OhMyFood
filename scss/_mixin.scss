@@ -1,0 +1,36 @@
+@mixin button {
+  width: 60%;
+  color: white;
+  height: 50px;
+  border-radius: 25px;
+  background-image: $background-button;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  box-shadow: 2px 2px 4px 2px #cfcfcf;
+}
+
+@mixin hover-button {
+  background-image: linear-gradient(
+    to top left,
+    lighten($color-primary, 08),
+    lighten($color-secondary, 04)
+  );
+  box-shadow: 2px 2px 10px 10px #cfcfcf;
+}
+
+@mixin figcaption-rules {
+  height: 30%;
+  background-color: white;
+  width: 100%;
+  border-radius: 0 0 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin center-item {
+  justify-content: center;
+  align-items: center;
+}
