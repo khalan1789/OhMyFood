@@ -34,3 +34,19 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin heart-background-coloration {
+  transition: transform;
+  transform: scale(1);
+  animation: like 2.5s;
+  color: $color-primary;
+}
+
+@mixin heart-background {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1px;
+  transform: scale(0);
+  transform-origin: bottom;
+}

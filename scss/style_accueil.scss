@@ -1,5 +1,14 @@
 @import "variables.scss";
 @import "mixin.scss";
+@keyframes like {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
 
 body {
   margin: 0;
@@ -265,20 +274,22 @@ nav {
         margin-top: 5px;
         margin-bottom: 0;
       }
-      i {
+      .icon-heart {
         margin-right: 25px;
         font-size: 1.8em;
-      }
-    }
-    .full-heart {
-      position: absolute;
-      right: 0;
-      transform: scale(1);
-      color: $color-primary;
-      display: none;
-      :hover::after {
-        display: initial;
-        cursor: help;
+        position: relative;
+        &:hover,
+        &:active {
+          .full-heart {
+            @include heart-background-coloration;
+          }
+          .empty-heart {
+            color: $color-primary;
+          }
+        }
+        .full-heart {
+          @include heart-background;
+        }
       }
     }
   }
@@ -292,6 +303,9 @@ nav {
     color: darken($color-tertiary, 45);
     display: flex;
     @include center-item;
+    :hover {
+      pointer: help;
+    }
   }
 }
 /*Footer*/

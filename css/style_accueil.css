@@ -1,3 +1,11 @@
+@keyframes like {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -323,20 +331,27 @@ nav ul i {
   margin-top: 5px;
   margin-bottom: 0;
 }
-.card--restaurant figure figcaption i {
+.card--restaurant figure figcaption .icon-heart {
   margin-right: 25px;
   font-size: 1.8em;
+  position: relative;
 }
-.card--restaurant figure .full-heart {
-  position: absolute;
-  right: 0;
+.card--restaurant figure figcaption .icon-heart:hover .full-heart, .card--restaurant figure figcaption .icon-heart:active .full-heart {
+  transition: transform;
   transform: scale(1);
+  animation: like 2.5s;
   color: #9356dc;
-  display: none;
 }
-.card--restaurant figure .full-heart :hover::after {
-  display: initial;
-  cursor: help;
+.card--restaurant figure figcaption .icon-heart:hover .empty-heart, .card--restaurant figure figcaption .icon-heart:active .empty-heart {
+  color: #9356dc;
+}
+.card--restaurant figure figcaption .icon-heart .full-heart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1px;
+  transform: scale(0);
+  transform-origin: bottom;
 }
 .card--restaurant__new {
   width: 80px;
@@ -349,6 +364,9 @@ nav ul i {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.card--restaurant__new :hover {
+  pointer: help;
 }
 
 /*Footer*/
