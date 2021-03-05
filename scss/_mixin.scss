@@ -50,3 +50,35 @@
   transform: scale(0);
   transform-origin: bottom;
 }
+
+@mixin footer {
+  display: flex;
+  flex-direction: column;
+  height: 195px;
+  background-color: #353535;
+  color: white;
+  padding: 20px;
+  @media all and(min-width:730px) {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    padding: 0;
+    height: 120px;
+  }
+}
+
+@mixin logo-dimensions {
+  width: 100%;
+  height: 63px;
+  display: flex;
+  @include center-item;
+  @media screen and(min-width:980Px) {
+    height: 100px;
+  }
+}
+
+@mixin logo-img-dimensions {
+  height: 1.5em;
+  @media screen and(min-width:980Px) {
+    height: 1.8em;
+  }
+}

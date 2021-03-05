@@ -26,20 +26,14 @@ header {
 }
 
 .logo {
-  width: 100%;
-  height: 63px;
-  display: flex;
-  @include center-item;
+  @include logo-dimensions;
   z-index: 1;
   box-shadow: 0px 1px 3px 2px #cecece;
   @media screen and(min-width:980Px) {
     height: 100px;
   }
   img {
-    height: 1.5em;
-    @media screen and(min-width:980Px) {
-      height: 1.8em;
-    }
+    @include logo-img-dimensions;
   }
 }
 
@@ -303,25 +297,12 @@ nav {
     color: darken($color-tertiary, 45);
     display: flex;
     @include center-item;
-    :hover {
-      pointer: help;
-    }
+    pointer: help;
   }
 }
 /*Footer*/
 footer {
-  display: flex;
-  flex-direction: column;
-  height: 195px;
-  background-color: #353535;
-  color: white;
-  padding: 20px;
-  @media all and(min-width:730px) {
-    flex-flow: row wrap;
-    justify-content: space-evenly;
-    padding: 0;
-    height: 120px;
-  }
+  @include footer;
   h3 {
     font-family: "shrikhand";
     font-weight: 400;
@@ -342,4 +323,35 @@ footer {
       margin-right: 4px;
     }
   }
+}
+
+/*Partie menu*/
+
+/*header*/
+/*dimensions logo et bouton retour pour chaque menu*/
+.logo--menu {
+  @include logo-dimensions;
+  position: relative;
+  .back-btn {
+    position: absolute;
+    left: 23px;
+  }
+  img {
+    @include logo-img-dimensions;
+  }
+}
+.menu--img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*Partie centrale*/
+main {
+  height: 1200px;
+  background-color: $background-color;
+  border-radius: 55px 55px 0px 0px;
+  position: absolute;
+  top: 280px;
+  width: 100%;
 }

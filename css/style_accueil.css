@@ -35,6 +35,11 @@ header {
     height: 100px;
   }
 }
+@media screen and (min-width: 980Px) {
+  .logo {
+    height: 100px;
+  }
+}
 .logo img {
   height: 1.5em;
 }
@@ -364,8 +369,6 @@ nav ul i {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.card--restaurant__new :hover {
   pointer: help;
 }
 
@@ -407,6 +410,51 @@ footer a .fa-utensils {
 }
 footer a .fa-hands-helping {
   margin-right: 4px;
+}
+
+/*Partie menu*/
+/*header*/
+/*dimensions logo et bouton retour pour chaque menu*/
+.logo--menu {
+  width: 100%;
+  height: 63px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+@media screen and (min-width: 980Px) {
+  .logo--menu {
+    height: 100px;
+  }
+}
+.logo--menu .back-btn {
+  position: absolute;
+  left: 23px;
+}
+.logo--menu img {
+  height: 1.5em;
+}
+@media screen and (min-width: 980Px) {
+  .logo--menu img {
+    height: 1.8em;
+  }
+}
+
+.menu--img {
+  height: 250px;
+  width: 100%;
+  object-fit: cover;
+}
+
+/*Partie centrale*/
+main {
+  height: 1200px;
+  background-color: #f6f6f6;
+  border-radius: 55px 55px 0px 0px;
+  position: absolute;
+  top: 280px;
+  width: 100%;
 }
 
 /*# sourceMappingURL=style_accueil.css.map */
