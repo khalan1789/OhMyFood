@@ -15,6 +15,7 @@ body a {
   color: inherit;
 }
 
+/*Partie page accueuil qui servira de base de travail pour la mise en place des menus*/
 header {
   display: flex;
   flex-direction: column;
@@ -88,32 +89,6 @@ header {
   padding-top: 30px;
   padding-bottom: 40px;
 }
-.presentation .btn {
-  width: 60%;
-  color: white;
-  height: 50px;
-  border-radius: 25px;
-  background-image: linear-gradient(to top left, #9356dc, #ff79da);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  box-shadow: 2px 2px 4px 2px #cfcfcf;
-}
-.presentation .btn:hover {
-  background-image: linear-gradient(to top left, #a978e3, #ff8de0);
-  box-shadow: 2px 2px 10px 10px #cfcfcf;
-}
-@media screen and (min-width: 630px) {
-  .presentation .btn {
-    max-width: 300px;
-  }
-}
-@media screen and (min-width: 980Px) {
-  .presentation .btn {
-    max-width: 350px;
-  }
-}
 .presentation h1 {
   width: 61%;
   font-size: 1.3em;
@@ -143,6 +118,33 @@ header {
 @media screen and (min-width: 980Px) {
   .presentation h3 {
     font-size: 1.3em;
+  }
+}
+
+.btn {
+  width: 60%;
+  color: white;
+  height: 50px;
+  border-radius: 25px;
+  background-image: linear-gradient(to top left, #9356dc, #ff79da);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  box-shadow: 2px 2px 4px 2px #cfcfcf;
+}
+.btn:hover {
+  background-image: linear-gradient(to top left, #a978e3, #ff8de0);
+  box-shadow: 2px 2px 10px 10px #cfcfcf;
+}
+@media screen and (min-width: 630px) {
+  .btn {
+    max-width: 300px;
+  }
+}
+@media screen and (min-width: 980Px) {
+  .btn {
+    max-width: 350px;
   }
 }
 
@@ -336,28 +338,6 @@ nav ul i {
   margin-top: 5px;
   margin-bottom: 0;
 }
-.card--restaurant figure figcaption .icon-heart {
-  margin-right: 25px;
-  font-size: 1.8em;
-  position: relative;
-}
-.card--restaurant figure figcaption .icon-heart:hover .full-heart, .card--restaurant figure figcaption .icon-heart:active .full-heart {
-  transition: transform;
-  transform: scale(1);
-  animation: like 2.5s;
-  color: #9356dc;
-}
-.card--restaurant figure figcaption .icon-heart:hover .empty-heart, .card--restaurant figure figcaption .icon-heart:active .empty-heart {
-  color: #9356dc;
-}
-.card--restaurant figure figcaption .icon-heart .full-heart {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 1px;
-  transform: scale(0);
-  transform-origin: bottom;
-}
 .card--restaurant__new {
   width: 80px;
   height: 30px;
@@ -372,6 +352,29 @@ nav ul i {
   pointer: help;
 }
 
+.icon-heart {
+  margin-right: 25px;
+  font-size: 1.8em;
+  position: relative;
+}
+.icon-heart:hover .full-heart, .icon-heart:active .full-heart {
+  transition: transform;
+  transform: scale(1);
+  animation: like 2.5s;
+  color: #9356dc;
+}
+.icon-heart:hover .empty-heart, .icon-heart:active .empty-heart {
+  color: #9356dc;
+}
+.icon-heart .full-heart {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 1px;
+  transform: scale(0);
+  transform-origin: bottom;
+}
+
 /*Footer*/
 footer {
   display: flex;
@@ -380,6 +383,7 @@ footer {
   background-color: #353535;
   color: white;
   padding: 20px;
+  transform: scaleY(-50px);
 }
 @media all and (min-width: 730px) {
   footer {
@@ -449,12 +453,120 @@ footer a .fa-hands-helping {
 
 /*Partie centrale*/
 main {
-  height: 1200px;
   background-color: #f6f6f6;
   border-radius: 55px 55px 0px 0px;
-  position: absolute;
-  top: 280px;
+  transform: translateY(-50px);
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main h2,
+main h3,
+main p {
+  font-size: 1em;
+}
+
+section {
+  width: 95%;
+}
+section h2 {
+  margin-left: 10px;
+  margin-top: 35px;
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 95%;
+  padding-left: 10px;
+}
+.main-header .title-menu {
+  font-family: "shrikhand";
+  font-size: 1.8em;
+}
+.main-header .icon-heart {
+  font-size: 1.4em;
+}
+
+.underline-bar {
+  margin-bottom: 25px;
+  margin-left: 10px;
+  width: 40px;
+  height: 2px;
+  background-color: #99e2d0;
+}
+
+/*composition des plats*/
+.menu-statement {
   width: 100%;
+  height: 90px;
+  display: flex;
+  margin-bottom: 18px;
+  background-color: #fff;
+  align-items: center;
+  border-radius: 20px;
+}
+.menu-statement :hover {
+  cursor: pointer;
+}
+.menu-statement :hover ~ .dash-animation {
+  display: initial;
+  animation: dash-validation 2.5s ease-in-out reverse;
+}
+.menu-statement .dash {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding-left: 15px;
+}
+.menu-statement h3 {
+  width: 95%;
+  margin-bottom: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.menu-statement p {
+  width: 95%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dash-price {
+  width: 60px;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 33px;
+}
+
+.dash-animation {
+  height: 100%;
+  width: 15%;
+  background-color: #99e2d0;
+  border-radius: 0px 20px 20px 0px;
+  display: none;
+}
+
+.btn--command {
+  margin-top: 50px;
+  margin-bottom: 65px;
+}
+
+.menu--footer {
+  transform: translateY(-50px);
+}
+
+@keyframes dash-validation {
+  0% {
+    transform: scale(1), translateX(50px);
+  }
+  100% {
+    transform: translateX(Opx);
+  }
 }
 
 /*# sourceMappingURL=style_accueil.css.map */
