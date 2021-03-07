@@ -404,7 +404,8 @@ section {
   }
   :hover ~ .dash-animation {
     display: initial;
-    animation: dash-validation 2.5s ease-in-out reverse;
+    animation: dash-validation 2.5s ease-in-out;
+    overflow: hidden;
   }
 
   .dash {
@@ -432,7 +433,7 @@ section {
 }
 .dash-animation {
   height: 100%;
-  width: 15%;
+  width: 20%;
   background-color: $color-tertiary;
   border-radius: 0px 20px 20px 0px;
   display: none;
@@ -447,7 +448,7 @@ section {
 
 @keyframes dash-validation {
   0% {
-    transform: scale(1), translateX(50px);
+    transform: translateX(50px);
   }
 
   100% {

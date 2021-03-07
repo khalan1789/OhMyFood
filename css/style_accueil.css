@@ -513,7 +513,8 @@ section h2 {
 }
 .menu-statement :hover ~ .dash-animation {
   display: initial;
-  animation: dash-validation 2.5s ease-in-out reverse;
+  animation: dash-validation 2.5s ease-in-out;
+  overflow: hidden;
 }
 .menu-statement .dash {
   display: flex;
@@ -545,7 +546,7 @@ section h2 {
 
 .dash-animation {
   height: 100%;
-  width: 15%;
+  width: 20%;
   background-color: #99e2d0;
   border-radius: 0px 20px 20px 0px;
   display: none;
@@ -562,7 +563,7 @@ section h2 {
 
 @keyframes dash-validation {
   0% {
-    transform: scale(1), translateX(50px);
+    transform: translateX(50px);
   }
   100% {
     transform: translateX(Opx);
