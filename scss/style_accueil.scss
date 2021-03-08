@@ -279,7 +279,6 @@ nav {
     color: darken($color-tertiary, 45);
     display: flex;
     @include center-item;
-    pointer: help;
   }
 }
 .icon-heart {
@@ -302,7 +301,6 @@ nav {
 /*Footer*/
 footer {
   @include footer;
-  transform: scaleY(-50px);
   h3 {
     font-family: "shrikhand";
     font-weight: 400;
@@ -350,7 +348,9 @@ footer {
 main {
   background-color: $background-color;
   border-radius: 55px 55px 0px 0px;
-  transform: translateY(-50px);
+  position: relative;
+  z-index: 2;
+  margin-top: -50px;
   padding-top: 20px;
   display: flex;
   flex-direction: column;
@@ -399,19 +399,24 @@ section {
   background-color: #fff;
   align-items: center;
   border-radius: 20px;
+  box-shadow: 0px 0px 5px 2px #eaeaea;
+  overflow: hidden;
   :hover {
     cursor: pointer;
   }
-  :hover ~ .dash-animation {
-    display: initial;
-    animation: dash-validation 2.5s ease-in-out;
+  :hover ~ .dash-slide {
+    animation: dash-validation 1s ease-in-out forwards;
     overflow: hidden;
+    .dash-slide--animation--circle {
+      transform: rotate(1turn);
+      transition: transform 1.1s ease-in-out;
+    }
   }
 
   .dash {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: calc(100% - 120px);
     padding-left: 15px;
   }
   h3 {
@@ -424,34 +429,43 @@ section {
     @include ellipsis;
   }
 }
-.dash-price {
-  width: 60px;
-  height: 100%;
+.dash-slide {
   display: flex;
-  align-items: flex-end;
-  margin-bottom: 33px;
-}
-.dash-animation {
+  width: 120px;
   height: 100%;
-  width: 20%;
+  transform: translateX(60px);
+  overflow: hidden;
+}
+.dash-price {
+  width: 50%;
+  height: 100%;
+  margin-top: 55px;
+  font-weight: bold;
+}
+.dash-slide--animation {
+  height: 100%;
+  width: 50%;
+  display: flex;
+  @include center-item;
   background-color: $color-tertiary;
   border-radius: 0px 20px 20px 0px;
-  display: none;
 }
+.fa-check-circle {
+  height: 1.1em;
+  color: white;
+}
+/*bouton commander*/
 .btn--command {
   margin-top: 50px;
   margin-bottom: 65px;
 }
-.menu--footer {
-  transform: translateY(-50px);
-}
 
 @keyframes dash-validation {
   0% {
-    transform: translateX(50px);
+    transform: translateX(60px);
   }
 
   100% {
-    transform: translateX(Opx);
+    transform: translateX(0px);
   }
 }
