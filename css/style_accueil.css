@@ -510,16 +510,16 @@ section h2 {
   box-shadow: 0px 0px 5px 2px #eaeaea;
   overflow: hidden;
 }
-.menu-statement :hover {
+.menu-statement:hover {
   cursor: pointer;
 }
-.menu-statement :hover ~ .dash-slide {
-  animation: dash-validation 1s ease-in-out forwards;
+.menu-statement:hover > .dash-slide {
+  animation: dash-validation 0.6s ease-in-out forwards;
   overflow: hidden;
 }
-.menu-statement :hover ~ .dash-slide .dash-slide--animation--circle {
+.menu-statement:hover > .dash-slide .dash-slide--animation--circle {
   transform: rotate(1turn);
-  transition: transform 1.1s ease-in-out;
+  transition: transform 0.7s ease-in-out;
 }
 .menu-statement .dash {
   display: flex;
@@ -535,7 +535,7 @@ section h2 {
   text-overflow: ellipsis;
 }
 .menu-statement p {
-  width: 95%;
+  width: 98%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
