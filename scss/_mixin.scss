@@ -79,7 +79,7 @@
 @mixin logo-img-dimensions {
   height: 1.5em;
   @media screen and(min-width:980Px) {
-    height: 1.8em;
+    height: 2.3em;
   }
 }
 
@@ -87,4 +87,9 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+@mixin circle-animation {
+  transform: rotate(1turn);
+  transition: transform 0.7s ease-in-out;
 }

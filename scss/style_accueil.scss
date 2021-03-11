@@ -1,21 +1,114 @@
 @import "variables.scss";
 @import "mixin.scss";
-@keyframes like {
-  0% {
-    transform: scale(0);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-
+@import "keyframes.scss";
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
   a {
     text-decoration: none;
     color: inherit;
+  }
+}
+/*loader*/
+/*container loader*/
+.container-loader {
+  min-height: 100vh;
+  min-width: 100vh;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  opacity: 0;
+  animation: launching 6s forwards;
+  z-index: 3;
+  background-color: $background-color;
+}
+.section-loader {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+/*bloc image et logo du loader*/
+.center-items {
+  width: auto;
+  font-size: 2em;
+  font-family: "shrikhand";
+  display: flex;
+  @include center-item;
+  margin-bottom: 50px;
+}
+/*Lettres*/
+.title-letter {
+  color: $color-letter-loader;
+  display: inline-block;
+  font-family: "shrikhand";
+  animation: lettre 1s ease-in-out forwards;
+  @for $i from 1 through 3 {
+    &--#{$i} {
+      animation-delay: 0s + $i;
+    }
+  }
+}
+/*image loader*/
+.loader-img {
+  height: 1.5em;
+  margin-right: 30px;
+  animation: rotation 1s 1s ease-in-out 3;
+  vertical-align: middle;
+}
+
+/*loading...*/
+.bar-load-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loading {
+  font-size: 1em;
+  font-style: italic;
+  color: $color-tertiary;
+  max-width: 350px;
+  position: relative;
+}
+
+.loading__point {
+  height: 0.5em;
+  width: 0.5em;
+  border-radius: 50%;
+  background-color: $color-tertiary;
+  display: inline-block;
+  margin-left: 10px;
+  margin-top: 10px;
+  transform: scale(0);
+  animation: loading-point 0.2s forwards;
+  animation-iteration-count: 1;
+  @for $i from 1 through $loading-point {
+    &--#{$i} {
+      animation-delay: $anim-delay-loader * $i;
+    }
+  }
+}
+/*barre dessous*/
+.border-bar {
+  width: 350px;
+  height: 20px;
+  transform-origin: left;
+  position: relative;
+  left: 8%;
+  &--loading {
+    width: 20px;
+    height: 3px;
+    background-color: $color-secondary;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform-origin: right;
+    animation: bar-loading 0.5s 0s ease-in alternate-reverse infinite;
+    border-radius: 30%;
   }
 }
 /*Partie page accueuil qui servira de base de travail pour la mise en place des menus*/
@@ -333,6 +426,9 @@ footer {
   .back-btn {
     position: absolute;
     left: 23px;
+    @media screen and(min-width:980px) {
+      font-size: 1.5em;
+    }
   }
   img {
     @include logo-img-dimensions;
@@ -342,9 +438,19 @@ footer {
   height: 250px;
   width: 100%;
   object-fit: cover;
+  @media screen and(min-width:530px) {
+    height: 280px;
+  }
+  @media screen and(min-width:720px) {
+    height: 300px;
+  }
+  @media screen and(min-width:980px) {
+    height: 350px;
+  }
 }
 
 /*Partie centrale*/
+/*Style du bloc global*/
 main {
   background-color: $background-color;
   border-radius: 55px 55px 0px 0px;
@@ -355,20 +461,20 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  h2,
+  @media screen and(min-width:980px) {
+    border-radius: 0;
+    margin-top: 0;
+  }
+
   h3,
   p {
     font-size: 1em;
+    @media screen and(min-width:980px) {
+      font-size: 1.3em;
+    }
   }
 }
-section {
-  width: 95%;
-  h2 {
-    margin-left: 10px;
-    margin-top: 35px;
-  }
-}
-
+/*Intitulé de la carte*/
 .main-header {
   display: flex;
   justify-content: space-between;
@@ -378,11 +484,30 @@ section {
   .title-menu {
     font-family: "shrikhand";
     font-size: 1.8em;
+    @media screen and(min-width:980px) {
+      font-size: 2.4em;
+    }
   }
   .icon-heart {
     font-size: 1.4em;
+    @media screen and(min-width:980px) {
+      font-size: 1.8em;
+    }
   }
 }
+/*Catégories entrées-plats-desserts*/
+section {
+  width: 95%;
+  h2 {
+    margin-left: 10px;
+    margin-top: 35px;
+    font-size: 1em;
+    @media screen and(min-width: 980px) {
+      font-size: 1.5em;
+    }
+  }
+}
+
 .underline-bar {
   margin-bottom: 25px;
   margin-left: 10px;
@@ -406,27 +531,58 @@ section {
   }
   &:hover > .dash-slide {
     animation: dash-validation 0.6s ease-in-out forwards;
-    overflow: hidden;
     .dash-slide--animation--circle {
-      transform: rotate(1turn);
-      transition: transform 0.7s ease-in-out;
+      @include circle-animation;
+    }
+  }
+  @media screen and(min-width:530px) {
+    &:hover > .dash-slide {
+      animation: dash-validation-530 0.6s ease-in-out forwards;
+      .dash-slide--animation--circle {
+        @include circle-animation;
+      }
+    }
+  }
+  @media screen and(min-width:720px) {
+    &:hover > .dash-slide {
+      animation: dash-validation-720 0.6s ease-in-out forwards;
+      .dash-slide--animation--circle {
+        @include circle-animation;
+      }
+    }
+  }
+  @media screen and(min-width:980px) {
+    &:hover > .dash-slide {
+      animation: dash-validation-980 0.6s ease-in-out forwards;
+      .dash-slide--animation--circle {
+        @include circle-animation;
+      }
     }
   }
 
   .dash {
     display: flex;
     flex-direction: column;
-    width: calc(100% - 120px);
+    width: calc(100% - 135px);
     padding-left: 15px;
+    @media screen and(min-width:530px) {
+      width: calc(100% - 160px);
+    }
+    @media screen and(min-width:720px) {
+      width: calc(100% - 200px);
+    }
+    @media screen and(min-width:980Px) {
+      width: calc(100% - 280px);
+    }
   }
   h3 {
-    width: 95%;
     margin-bottom: 0;
+    margin-right: -30px;
     @include ellipsis;
   }
   p {
-    width: 98%;
     @include ellipsis;
+    margin-right: -30px;
   }
 }
 .dash-slide {
@@ -435,12 +591,27 @@ section {
   height: 100%;
   transform: translateX(60px);
   overflow: hidden;
+  @media screen and(min-width:530px) {
+    width: 160px;
+    transform: translateX(80px);
+  }
+  @media screen and(min-width:720px) {
+    width: 200px;
+    transform: translateX(100px);
+  }
+  @media screen and(min-width:980Px) {
+    width: 280px;
+    transform: translateX(60%);
+  }
 }
 .dash-price {
   width: 50%;
   height: 100%;
   margin-top: 55px;
   font-weight: bold;
+  @media screen and(min-width:530px) {
+    text-align: center;
+  }
 }
 .dash-slide--animation {
   height: 100%;
@@ -460,12 +631,4 @@ section {
   margin-bottom: 65px;
 }
 
-@keyframes dash-validation {
-  0% {
-    transform: translateX(60px);
-  }
-
-  100% {
-    transform: translateX(0px);
-  }
-}
+/*LOADER*/
