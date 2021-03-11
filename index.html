@@ -20,38 +20,37 @@
 
   <body>
     <div class="container-loader">
-      <section class="section-loader">
-        <div class="center-items">
-          <span class="rotate-img"
-            ><img
-              class="loader-img"
-              src="images/logo/assiette_fleur.svg"
-              alt="" /></span
-          ><span class="title-letter title-letter--1">OH</span
-          ><span class="title-letter title-letter--2">MY</span
-          ><span class="title-letter title-letter--3">FOOD</span>
+      <div class="loader-top">
+        <span class="rotate-img"
+          ><img
+            class="loader-img"
+            src="images/logo/assiette_fleur.svg"
+            alt="" /></span
+        ><span class="title-letter title-letter--1">OH</span
+        ><span class="title-letter title-letter--2">MY</span
+        ><span class="title-letter title-letter--3">FOOD</span>
+      </div>
+      <div class="loader-bottom">
+        <div class="loading">
+          Loading<span class="loading__point loading__point--1"></span
+          ><span class="loading__point loading__point--2"></span
+          ><span class="loading__point loading__point--3"></span>
         </div>
-        <section class="bar-load-section">
-          <div class="loading">
-            Loading<span class="loading__point loading__point--1"></span
-            ><span class="loading__point loading__point--2"></span
-            ><span class="loading__point loading__point--3"></span>
-          </div>
-          <div class="border-bar">
-            <span class="border-bar--loading"></span>
-          </div>
-        </section>
-      </section>
+        <div class="border-bar">
+          <span class="border-bar--loading"></span>
+        </div>
+      </div>
     </div>
-    <div class="container">
+    <div class="bloc_page">
       <header>
         <!--Logo avec localisation -->
         <div class="logo">
           <img src="images/logo/ohmyfood.png" alt="logo site" />
         </div>
-        <div class="localisation">
-          <h3><i class="fas fa-map-marker-alt"></i>Paris, Belleville</h3>
-        </div>
+        <form class="localisation">
+          <i class="fas fa-map-marker-alt"></i
+          ><input type="text" value="Paris, Belleville" />
+        </form>
         <!--Présentation du site avec bouton vers ancre-->
         <div class="presentation">
           <h1>Réservez le menu qui vous convient</h1>
@@ -83,7 +82,7 @@
       </header>
       <!--Section principale, ancre du bouton dans le header-->
       <section id="restaurants">
-        <h2 class="title--section">Restaurants</h2>
+        <h2 class="title--restaurant">Restaurants</h2>
         <a class="card--restaurant" href="la_palette_du_gout.html"
           ><div class="card--restaurant__new">Nouveau</div>
           <figure>

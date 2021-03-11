@@ -6,10 +6,19 @@
 
   60% {
     opacity: 1;
+    transform: scale(1);
   }
-
+  90% {
+    transform: scale(3.5);
+  }
+  99% {
+    z-index: 2;
+    transform: scale(3.5);
+  }
   100% {
     opacity: 0;
+    z-index: -1;
+    transform: scale(0);
   }
 }
 /*Lettres qui tournent*/
