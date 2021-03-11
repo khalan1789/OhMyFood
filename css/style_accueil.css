@@ -8,9 +8,19 @@
   }
   60% {
     opacity: 1;
+    transform: scale(1);
+  }
+  90% {
+    transform: scale(3.5);
+  }
+  99% {
+    z-index: 2;
+    transform: scale(3.5);
   }
   100% {
     opacity: 0;
+    z-index: -1;
+    transform: scale(0);
   }
 }
 /*Lettres qui tournent*/
@@ -111,9 +121,11 @@ body a {
 /*container loader*/
 .container-loader {
   min-height: 100vh;
-  min-width: 100vh;
+  min-width: 100vw;
   display: flex;
-  align-items: center;
+  justify-content: center;
+  top: 40%;
+  flex-direction: column;
   position: absolute;
   top: 0;
   bottom: 0;
@@ -121,19 +133,13 @@ body a {
   left: 0;
   opacity: 0;
   animation: launching 6s forwards;
-  z-index: 3;
+  z-index: 2;
   background-color: #f6f6f6;
-}
-
-.section-loader {
-  margin: 0;
-  padding: 0;
   text-align: center;
 }
 
 /*bloc image et logo du loader*/
-.center-items {
-  width: auto;
+.loader-top {
   font-size: 2em;
   font-family: "shrikhand";
   display: flex;
@@ -168,7 +174,7 @@ body a {
 }
 
 /*loading...*/
-.bar-load-section {
+.loader-bottom {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -266,25 +272,33 @@ header {
   text-align: center;
   background-color: #eaeaea;
   z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 @media screen and (min-width: 980Px) {
   .localisation {
     height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
-.localisation h3 {
-  margin-top: 15px;
+.localisation input {
+  outline: none;
+  background-color: #eaeaea;
+  border: none;
+  font-weight: bold;
   font-size: 1em;
+  text-align: center;
 }
 @media screen and (min-width: 980Px) {
-  .localisation h3 {
+  .localisation input {
     font-size: 1.3em;
   }
 }
-.localisation h3 i {
+.localisation input:focus {
+  border: 1px solid #fff;
+  border-radius: 5px;
+}
+.localisation input i {
   margin-right: 16px;
 }
 
@@ -475,6 +489,7 @@ nav ul i {
   flex-direction: column;
   align-items: center;
   background-color: #f6f6f6;
+  width: 100%;
 }
 @media all and (min-width: 730px) {
   #restaurants {
@@ -482,18 +497,19 @@ nav ul i {
     justify-content: space-around;
   }
 }
-#restaurants .title--section {
+#restaurants .title--restaurant {
   width: 90%;
   margin-top: 50px;
+  font-size: 1.5em;
 }
 @media all and (min-width: 730px) {
-  #restaurants .title--section {
+  #restaurants .title--restaurant {
     width: 95%;
     text-align: center;
   }
 }
 @media all and (min-width: 980px) {
-  #restaurants .title--section {
+  #restaurants .title--restaurant {
     font-size: 2em;
   }
 }
