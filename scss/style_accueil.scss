@@ -524,6 +524,16 @@ section {
   height: 2px;
   background-color: $color-tertiary;
 }
+
+.item-delay {
+  opacity: 0;
+  animation: apparition 1.8s forwards;
+  @for $i from 1 through $item-apparition-number {
+    &--#{$i} {
+      animation-delay: 0.3s * $i;
+    }
+  }
+}
 /*composition des plats*/
 .menu-statement {
   width: 100%;

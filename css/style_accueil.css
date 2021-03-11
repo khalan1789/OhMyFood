@@ -76,6 +76,19 @@
     transform: scale(1);
   }
 }
+/*apparition en décalé des plats*/
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*validation des plats*/
 @keyframes dash-validation {
   0% {
     transform: translateX(60px);
@@ -772,6 +785,53 @@ section h2 {
   width: 40px;
   height: 2px;
   background-color: #99e2d0;
+}
+
+.item-delay {
+  opacity: 0;
+  animation: apparition 1.8s forwards;
+}
+.item-delay--1 {
+  animation-delay: 0.3s;
+}
+.item-delay--2 {
+  animation-delay: 0.6s;
+}
+.item-delay--3 {
+  animation-delay: 0.9s;
+}
+.item-delay--4 {
+  animation-delay: 1.2s;
+}
+.item-delay--5 {
+  animation-delay: 1.5s;
+}
+.item-delay--6 {
+  animation-delay: 1.8s;
+}
+.item-delay--7 {
+  animation-delay: 2.1s;
+}
+.item-delay--8 {
+  animation-delay: 2.4s;
+}
+.item-delay--9 {
+  animation-delay: 2.7s;
+}
+.item-delay--10 {
+  animation-delay: 3s;
+}
+.item-delay--11 {
+  animation-delay: 3.3s;
+}
+.item-delay--12 {
+  animation-delay: 3.6s;
+}
+.item-delay--13 {
+  animation-delay: 3.9s;
+}
+.item-delay--14 {
+  animation-delay: 4.2s;
 }
 
 /*composition des plats*/

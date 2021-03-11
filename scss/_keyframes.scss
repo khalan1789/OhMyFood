@@ -78,7 +78,19 @@
     transform: scale(1);
   }
 }
-
+/*apparition en décalé des plats*/
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*validation des plats*/
 @keyframes dash-validation {
   0% {
     transform: translateX(60px);
