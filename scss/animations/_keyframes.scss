@@ -1,0 +1,78 @@
+/* PARTIE PRINCIPALE DU SITE APRES LE LOADER*/
+/*Coeur qui se remplit*/
+@keyframes like {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+/*apparition en décalé des plats*/
+@keyframes apparition {
+  0% {
+    opacity: 0;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/*validation des plats*/
+@keyframes dash-validation {
+  0% {
+    transform: translateX(60px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes dash-validation-530 {
+  0% {
+    transform: translateX(80px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes dash-validation-720 {
+  0% {
+    transform: translateX(100px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes dash-validation-980 {
+  0% {
+    transform: translateX(140px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+/*décalage du overflow petits écrans*/
+@keyframes overflow {
+  0% {
+    width: 100%;
+  }
+  25% {
+    width: 98%;
+  }
+  50% {
+    width: 96%;
+  }
+  75% {
+    width: 94%;
+  }
+  100% {
+    width: 92%;
+  }
+}

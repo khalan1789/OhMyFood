@@ -1,0 +1,22 @@
+$color-primary: #9356dc;
+$color-secondary: #ff79da;
+$color-tertiary: #99e2d0;
+
+/*Partie loader*/
+$color-letter-loader: #fff;
+$loading-point: 3;
+$anim-delay-loader: 1s;
+
+/*Site et général*/
+$item-apparition-number: 14;
+$background-color: #f6f6f6;
+$form-background-color: #eaeaea;
+$background-button: linear-gradient(
+  to top left,
+  $color-primary,
+  $color-secondary
+);
+$background-li: lighten(#f6f6f6, 01);
+
+/*animation des plats*/
+$dash-duration: 0.6s;

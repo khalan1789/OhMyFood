@@ -1,6 +1,8 @@
-@import "variables.scss";
-@import "mixin.scss";
-@import "keyframes.scss";
+@import "utils/variables.scss";
+@import "utils/mixin";
+@import "animations/_keyframes.scss";
+@import "animations/loader_keyframes";
+@import "style_loader.scss";
 body {
   margin: 0;
   font-family: "Roboto", sans-serif;
@@ -9,106 +11,7 @@ body {
     color: inherit;
   }
 }
-/*loader*/
-/*container loader*/
-.container-loader {
-  min-height: 100vh;
-  min-width: 100vw;
-  display: flex;
-  justify-content: center;
-  top: 40%;
-  flex-direction: column;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  opacity: 0;
-  animation: launching 6s forwards;
-  z-index: 2;
-  background-color: $background-color;
-  text-align: center;
-}
 
-/*bloc image et logo du loader*/
-.loader-top {
-  font-size: 2em;
-  font-family: "shrikhand";
-  display: flex;
-  @include center-item;
-  margin-bottom: 50px;
-}
-/*Lettres*/
-.title-letter {
-  color: $color-letter-loader;
-  display: inline-block;
-  font-family: "shrikhand";
-  animation: lettre 1s ease-in-out forwards;
-  @for $i from 1 through 3 {
-    &--#{$i} {
-      animation-delay: 0s + $i;
-    }
-  }
-}
-/*image loader*/
-.loader-img {
-  height: 1.5em;
-  margin-right: 30px;
-  animation: rotation 1s 1s ease-in-out 3;
-  vertical-align: middle;
-}
-
-/*loading...*/
-.loader-bottom {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.loading {
-  font-size: 1em;
-  font-style: italic;
-  color: $color-tertiary;
-  max-width: 350px;
-  position: relative;
-}
-
-.loading__point {
-  height: 0.5em;
-  width: 0.5em;
-  border-radius: 50%;
-  background-color: $color-tertiary;
-  display: inline-block;
-  margin-left: 10px;
-  margin-top: 10px;
-  transform: scale(0);
-  animation: loading-point 0.2s forwards;
-  animation-iteration-count: 1;
-  @for $i from 1 through $loading-point {
-    &--#{$i} {
-      animation-delay: $anim-delay-loader * $i;
-    }
-  }
-}
-/*barre dessous*/
-.border-bar {
-  width: 350px;
-  height: 20px;
-  transform-origin: left;
-  position: relative;
-  left: 8%;
-  &--loading {
-    width: 20px;
-    height: 3px;
-    background-color: $color-secondary;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    transform-origin: right;
-    animation: bar-loading 0.5s 0s ease-in alternate-reverse infinite;
-    border-radius: 30%;
-  }
-}
 /*Partie page accueuil qui servira de base de travail pour la mise en place des menus*/
 
 header {
@@ -133,7 +36,7 @@ header {
   width: 100%;
   height: 50px;
   text-align: center;
-  background-color: #eaeaea;
+  background-color: $form-background-color;
   z-index: 0;
   display: flex;
   @include center-item;
@@ -507,6 +410,7 @@ main {
 /*Catégories entrées-plats-desserts*/
 section {
   width: 95%;
+  @include center-section;
   h2 {
     margin-left: 10px;
     margin-top: 35px;
@@ -523,6 +427,10 @@ section {
   width: 40px;
   height: 2px;
   background-color: $color-tertiary;
+  @media screen and(min-width:980px) {
+    align-self: center;
+    width: 100px;
+  }
 }
 
 .item-delay {
@@ -547,9 +455,14 @@ section {
   overflow: hidden;
   &:hover {
     cursor: pointer;
+    @media screen and(max-width:420px) {
+      .dash-description {
+        animation: overflow $dash-duration 0.2s forwards;
+      }
+    }
   }
   &:hover > .dash-slide {
-    animation: dash-validation 0.6s ease-in-out forwards;
+    animation: dash-validation $dash-duration ease-in-out forwards;
     .dash-slide--animation--circle {
       @include circle-animation;
     }
@@ -596,12 +509,11 @@ section {
   }
   h3 {
     margin-bottom: 0;
-    margin-right: -30px;
+
     @include ellipsis;
   }
   p {
     @include ellipsis;
-    margin-right: -30px;
   }
 }
 .dash-slide {
