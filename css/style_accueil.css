@@ -666,10 +666,12 @@ header {
   font-weight: bold;
   font-size: 1em;
   text-align: center;
+  width: 150px;
 }
 @media screen and (min-width: 980Px) {
   .localisation input {
     font-size: 1.3em;
+    width: 250px;
   }
 }
 .localisation input:focus {
