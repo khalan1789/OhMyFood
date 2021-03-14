@@ -55,6 +55,7 @@
   transform: scale(1);
   animation: like 2.5s;
   color: $color-primary;
+  /*juste color à la base*/
 }
 
 @mixin heart-background {

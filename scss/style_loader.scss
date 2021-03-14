@@ -29,10 +29,10 @@
 }
 /*Lettres*/
 .title-letter {
-  color: $color-letter-loader;
   display: inline-block;
   font-family: "shrikhand";
   animation: lettre 1s ease-in-out forwards;
+  color: lighten($color-primary, 70);
   @for $i from 1 through 3 {
     &--#{$i} {
       animation-delay: 0s + $i;
