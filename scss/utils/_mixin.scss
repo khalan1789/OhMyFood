@@ -50,12 +50,16 @@
   }
 }
 /*Coeurs*/
+@mixin heart-coloration {
+  background: linear-gradient(to top left, $color-primary, $color-secondary);
+  -webkit-background-clip: text;
+  color: transparent;
+}
 @mixin heart-background-coloration {
   transition: transform;
   transform: scale(1);
   animation: like 2.5s;
-  color: $color-primary;
-  /*juste color à la base*/
+  @include heart-coloration;
 }
 
 @mixin heart-background {
@@ -66,7 +70,7 @@
   transform: scale(0);
   transform-origin: bottom;
 }
-
+/*footer*/
 @mixin footer {
   display: flex;
   flex-direction: column;

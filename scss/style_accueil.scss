@@ -290,6 +290,7 @@ nav {
   }
 }
 .icon-heart {
+  /*icone coeur qui se remplit*/
   margin-right: 25px;
   font-size: 1.8em;
   position: relative;
@@ -299,7 +300,7 @@ nav {
       @include heart-background-coloration;
     }
     .empty-heart {
-      color: $color-primary;
+      @include heart-coloration;
     }
   }
   .full-heart {
