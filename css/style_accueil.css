@@ -152,6 +152,17 @@
     transform: translateX(300px) scale(1, 3);
   }
 }
+@keyframes hide-bloc-page {
+  0% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 /*loader*/
 /*container loader*/
 .container-loader {
@@ -263,6 +274,10 @@
   transform-origin: right;
   animation: bar-loading 0.5s 0s ease-in alternate-reverse infinite;
   border-radius: 30%;
+}
+
+.bloc-for-loader {
+  animation: hide-bloc-page 5.5s forwards;
 }
 
 /*Partie menu*/
