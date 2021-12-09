@@ -97,3 +97,8 @@
     border-radius: 30%;
   }
 }
+
+//bloc principal du site caché durant le loader
+.bloc-for-loader {
+  animation: hide-bloc-page 5.5s forwards
+}
